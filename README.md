@@ -1,0 +1,1 @@
+n this programs I developed the closed formula for some of the most used counting techniques, tested their time complexity and also developed functions to create all of the total amount of arrays defined by their parameters (then compared their lenghts against the closed formulas).
