@@ -98,10 +98,11 @@ def show_help():
         "--k : Fijar valor de k para la operación\n"
         "-verificar : Comparar longitud de reultado obtenido con el valor real\n" \
         "-forzar : Forzar al programa a hacer operaciones con valores mayores a los establecidos\n" \
-        "-limites : Testear los límites de tiempo de las operaciones" \
-        "set_limits : Cambiar valores de los límites" \
-        "exit: Finalizar ejecución" \
-        "\n\n" \
+        "-limites : Testear los límites de tiempo de las operaciones\n" \
+        "set_limits : Cambiar valores de los límites\n" \
+        "exit: Finalizar la ejecución\n" \
+        "clear : Limpiar la terminal\n" \
+        "\n" \
         "Operaciones:\n" \
         "perm : Factorial (necesita de un n)\n" \
         "nPr : Factorial (necesita de un n y r)\n" \
@@ -109,7 +110,7 @@ def show_help():
         "nPr_rep : Factorial (necesita de un n y r)\n" \
         "nCr_rep : Factorial (necesita de un n y r)\n" \
         "barras : Factorial (necesita de un m y un k)\n" \
-        "clear : Limpiar la terminal\n"
+        
     )
 
 # Testear límites de tiempo de operaciones
@@ -185,7 +186,7 @@ def main():
             show_results(n, r, last_time, total_time, "barras")
 
         if opt == 'set_limits': # Cambiar los límites predeterminados
-            desicion = input('Hacer operaciones con límites altos puede detener el programa repentinamente. ¿Está seguro que desea continuar? Y/n ')
+            desicion = input('\nHacer operaciones con límites altos puede detener el programa repentinamente. ¿Está seguro que desea continuar? Y/n ')
             if desicion == 'Y' or desicion == 'y':
                 print(f'n={n_lim}, r={r_lim}, m={m_lim}, k={k_lim}')
                 n_lim = int(input('n='))
@@ -253,7 +254,7 @@ def main():
                             print('FAIL')
                         
                     if n_val > n_lim and '-forzar' not in args:
-                        print("n mayor al límite asignado. Escriba 'limits' para modificar los límites")
+                        print("n mayor al límite asignado. Escriba 'set_limits' para modificar los límites")
                         continue
 
                 except (ValueError, IndexError):
@@ -284,7 +285,7 @@ def main():
                             print('FAIL')
 
                     if (n_val > n_lim or r_val > r_lim) and '-forzar' not in args:
-                        print("n o r mayor/es al límite asignado. Escriba 'limits' para modificar los límites")
+                        print("n o r mayor/es al límite asignado. Escriba 'set_limits' para modificar los límites")
                         continue
 
                 except (ValueError, IndexError):
@@ -315,7 +316,7 @@ def main():
                             print('FAIL')
 
                     if (n_val > n_lim or r_val > r_lim) and '-forzar' not in args:
-                        print("n o r mayor/es al límite asignado. Escriba 'limits' para modificar los límites")
+                        print("n o r mayor/es al límite asignado. Escriba 'set_limits' para modificar los límites")
                         continue
 
                 except (ValueError, IndexError):
@@ -346,7 +347,7 @@ def main():
                             print('FAIL')
 
                     if (n_val > n_lim or r_val > r_lim) and '-forzar' not in args:
-                        print("n o r mayor/es al límite asignado. Escriba 'limits' para modificar los límites")
+                        print("n o r mayor/es al límite asignado. Escriba 'set_limits' para modificar los límites")
                         continue
 
                 except (ValueError, IndexError):
@@ -377,7 +378,7 @@ def main():
                             print('FAIL')
 
                     if (n_val > n_lim or r_val > r_lim) and '-forzar' not in args:
-                        print("n o r mayor/es al límite asignado. Escriba 'limits' para modificar los límites")
+                        print("n o r mayor/es al límite asignado. Escriba 'set_limits' para modificar los límites")
                         continue
 
                 except (ValueError, IndexError):
@@ -408,7 +409,7 @@ def main():
                             print('FAIL')
 
                     if (m_val > m_lim or k_val > k_lim) and '-forzar' not in args:
-                        print("m o k mayor/es al límite asignado. Escriba 'limits' para modificar los límites")
+                        print("m o k mayor/es al límite asignado. Escriba 'set_limits' para modificar los límites")
                         continue
 
                 except (ValueError, IndexError):
